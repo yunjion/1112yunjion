@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<!--
+  Infographic Title: 미림 마이스터고 1학년 1반의 AI 활용 실태 및 윤리 의식 조사
+  Date Generated: 2025-05-30
+  Data Source: Student Joint Investigation Report
+  Key Technologies: HTML, Tailwind CSS, Chart.js (via CDN)
+  Note: This is a single-file HTML infographic. All CSS and JavaScript are embedded.
+-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미림 마이스터고 1학년 1반 AI 활용 실태 및 윤리 의식 조사</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Tailwind's default sans-serif stack */
+            background-color: #F4F7F9; /* Light Background */
+            color: #263238; /* Dark Text */
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            background-color: #FFFFFF; /* Light Background for chart cards */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .report-title { color: #2A62B6; } /* Primary Blue */
+        .section-title { color: #2A62B6; border-bottom: 2px solid #4ECDC4; } /* Primary Blue, Secondary Teal for border */
+        .card { background-color: #FFFFFF; } /* Light Background */
+        .text-primary-blue { color: #2A62B6; }
+        .text-secondary-teal { color: #4ECDC4; }
+        .bg-supporting-light-blue { background-color: #E0F2FE; }
+        .text-accent-grey { color: #A9A9A9; }
+
+        /* Chart.js 툴팁 커스텀 스타일 (필요시) */
+        .chartjs-tooltip {
+            background: rgba(38, 50, 56, 0.9); /* Dark Text with opacity */
+            border-radius: 4px;
+            color: white;
+            opacity: 1;
+            pointer-events: none;
+            position: absolute;
+            transform: translate(-50%, 0);
+            transition: all .1s ease;
+            padding: 8px;
+            font-size: 0.875rem;
+        }
+        .chartjs-tooltip-key {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        /* 한국어 레이블 줄바꿈을 위한 스타일 (Chart.js가 자동으로 처리하도록 유도) */
+        canvas {
+            max-width: 100%;
+        }
+        /* 인터뷰 인용구 스타일 */
+        .interview-quote {
+            background-color: #E0F2FE; /* Supporting Light Blue */
+            border-left: 4px solid #4ECDC4; /* Secondary Teal */
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border-radius: 0.25rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="mb-8 text-center">
+            <h1 class="report-title text-3xl md:text-4xl font-bold mb-2">미림 마이스터고 1학년 1반의 AI 활용 실태 및 윤리 의식 조사</h1>
+            <p class="text-accent-grey text-sm">1학년 (1)반 (1)조: 강태인, 윤지온, 이주호, 차윤미</p>
+            <p class="text-accent-grey text-sm">작성일: 2025년 5월 26일</p>
+        </header>
+
+        <main>
+            <section class="mb-10 p-6 card rounded-lg shadow-lg">
+                <h2 class="section-title text-2xl font-semibold mb-4 pb-2">1. 조사 동기와 목적</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    최근 AI 사용이 급증하면서 신뢰도, 출처 표기, 학습 효과 등 다양한 윤리적 문제가 대두되고 있다.
+                    이에 따라 본 조사는 학생들이 AI를 사용할 때 발생할 수 있는 윤리적 문제를 인식하고, 표절을 방지하며 책임감 있는 활용 태도를 기를 수 있도록 핵심 정보를 제공하는 것을 목적으로 실시했다.
+                </p>
+            </section>
+
+            <section class="mb-10 p-6 card rounded-lg shadow-lg">
+                <h2 class="section-title text-2xl font-semibold mb-4 pb-2">2. 조사 계획</h2>
+                <div class="space-y-4">
+                    <p><strong class="text-primary-blue">조사 기간:</strong> 5월 14일 ~ 5월 19일</p>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-teal mb-2">조사 방법과 대상 조사</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">조사 방법</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">조사 대상</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">조사 내용</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">설문조사</td>
+                                        <td class="px-6 py-4">미림 마이스터고 1학년 1반 전체 학생들</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">
+                                            학생들이 모르는 내용을 접했을 때 AI에게 얼마나 자주 질문하는지를 조사했다.
+                                            AI의 답변을 어느 정도 신뢰하는지를 5단계 척도로 질문했다. AI 사용 후 출처를 남긴 경험이 있는지를 확인했다.
+                                            각 문항은 학생들의 AI 활용 태도와 윤리 의식 파악을 목적으로 구성되었다.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">인터뷰</td>
+                                        <td class="px-6 py-4">미림 마이스터고 1학년 1반 2명</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">
+                                            학생들의 AI 사용 경험과 사용 목적은 무엇인지,
+                                            AI를 사용할 때 신뢰도와 프롬프트 작성 방식은 어떤지, 출처 표기 여부와 AI 활용을 통한 성장 경험이 있는지를 조사했다.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-10">
+                <h2 class="section-title text-2xl font-semibold mb-6 pb-2 p-6 card rounded-lg shadow-lg">3. 조사 결과</h2>
+
+                <article class="mb-8 p-6 card rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-secondary-teal mb-4">가. 설문조사 결과</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
+                        <div class="chart-container w-full max-w-md mx-auto h-80 md:h-96 lg:h-[450px]">
+                            <p class="text-center font-medium mb-2">1. 모르는 내용이 있을 때, 얼마나 자주 AI에게 질문하나요?</p>
+                            <canvas id="surveyChart1"></canvas>
+                            <p class="text-xs text-accent-grey mt-2 text-center">학생들의 73.7%가 AI를 ‘보통’ 이상 자주 활용하는 것으로 나타났다. 가장 많은 응답은 ‘종종 쓴다’(47.4%)이다.</p>
+                        </div>
+                        <div class="chart-container w-full max-w-md mx-auto h-80 md:h-96 lg:h-[450px]">
+                             <p class="text-center font-medium mb-2">2. AI의 말을 얼마만큼 믿나요?</p>
+                            <canvas id="surveyChart2"></canvas>
+                            <p class="text-xs text-accent-grey mt-2 text-center">학생들 중 AI의 말을 ‘그렇다’ 이상으로 신뢰하는 비율이 57.9%로 다수를 차지한다. ‘보통이다’ 응답도 42.1%였다.</p>
+                        </div>
+                        <div class="chart-container w-full max-w-md mx-auto h-80 md:h-96 lg:h-[450px]">
+                            <p class="text-center font-medium mb-2">3. AI를 사용하고 나서 출처를 남긴 경험이 있나요?</p>
+                            <canvas id="surveyChart3"></canvas>
+                            <p class="text-xs text-accent-grey mt-2 text-center">학생들의 57.9%가 AI 사용 후 출처를 남기지 않는 편으로 나타났다. 출처를 남긴다고 응답한 학생은 36.9%였다.</p>
+                            <p class="text-xs text-accent-grey mt-1 text-center">* 각 비율은 소수점 둘째 자리에서 반올림하여 합계가 100%를 초과할 수 있다.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="p-6 card rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-secondary-teal mb-6">나. 인터뷰 결과</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-supporting-light-blue p-6 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-primary-blue mb-3">김서연 학생</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> 시험/과제 활용 (빈도: 4)</p>
+                                    <p class="interview-quote text-sm text-gray-600">시험 준비할 때 예상문제 같은 거 풀어달라고 하거나 과제 하면서 아이디어 얻기 위해서.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> AI를 학업에 직접적으로 활용하며 효율성을 높이려는 경향이 나타난다. 개인 학습 및 과제 수행에 AI가 중요한 도구로 사용된다.</p>
+                                </div>
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> 프롬프트 개선 (빈도: 3)</p>
+                                    <p class="interview-quote text-sm text-gray-600">처음에는 대충 얘기하고 이렇게 천천히 개선하는 방향인 것 같은데.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> AI와의 상호작용에서 초기 입력보다 점진적인 개선을 통해 원하는 결과를 얻으려 시도한다. 이는 AI 활용 능동성을 보여준다.</p>
+                                </div>
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> AI 신뢰도 (빈도: 2)</p>
+                                    <p class="interview-quote text-sm text-gray-600">나는 한 90% 믿기는 하는데 내가 딱 봤을 때 읽었을 때 이거 좀 이상한데 아니면은 대부분은 믿긴 해.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> AI 응답에 대해 높은 신뢰도를 보이나, 동시에 자신의 판단으로 오류 여부를 검토하는 비판적 인식이 존재한다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-supporting-light-blue p-6 rounded-lg shadow">
+                            <h4 class="text-lg font-semibold text-primary-blue mb-3">이건우 학생</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> AI 신뢰도 (빈도: 3)</p>
+                                    <p class="interview-quote text-sm text-gray-600">100%에 가깝다고 볼 수 있다.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> AI의 정확성과 유용성에 대해 매우 높은 신뢰를 보인다. 학습 도구로서 전적으로 의존하는 경향을 나타냈다.</p>
+                                </div>
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> 다양한 AI 비교 (빈도: 4)</p>
+                                    <p class="interview-quote text-sm text-gray-600">제미니는 긴 글을 쓸 때 매우 용하다고 생각하고 리튼, GPT, 제미니 등 다양한 도구를 비교 사용한다.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> 리튼, GPT, 제미니 등 다양한 도구를 비교 사용하며 목적별 효율을 평가한다. 실용성과 경제성을 기준으로 AI를 선택하는 모습을 보였다.</p>
+                                </div>
+                                <div>
+                                    <p><strong class="text-gray-700">핵심 키워드:</strong> 출처 미기재 (빈도: 2)</p>
+                                    <p class="interview-quote text-sm text-gray-600">출처를 남기지 않는 편이다.</p>
+                                    <p class="text-sm text-gray-700 mt-1"><strong>요약:</strong> AI 사용 시 출처를 밝히지 않아 학습 윤리 문제가 드러난다. 전문성 있는 모습으로 보이고 싶어하는 심리적 동기가 일부 작용하는 것으로 파악됐다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="mb-10 p-6 card rounded-lg shadow-lg">
+                <h2 class="section-title text-2xl font-semibold mb-4 pb-2">4. 결론 및 제언</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-teal mb-2">1) 결론 요약</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            조사 결과, 대부분의 학생들이 AI를 학습 도구로 자주 활용하고 있으며, AI의 답변에 대해서도 전반적으로 높은 신뢰를 보이는 것으로 나타났다. 이는 AI가 학생들의 학습 과정에 깊이 스며들어 있으며, 정보를 탐색하고 이해하는 데 있어 중요한 역할을 하고 있음을 보여준다. 그러나 그에 반해, AI를 통해 얻은 정보에 대한 출처를 표기하거나 명시하는 실천은 부족한 것으로 드러났다. 많은 학생들이 AI의 도움을 받고 있음에도 불구하고, 그 출처를 남기는 것의 중요성이나 필요성에 대해 상대적으로 낮은 인식을 가지고 있는 것으로 해석된다.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-secondary-teal mb-2">2) 제언</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            AI를 활용한 학습 과정에서 학생들은 출처를 정확히 밝히는 습관을 기르고, AI가 제공하는 정보의 정확성과 신뢰성을 비판적으로 평가해야 하며, 타인의 지식재산권을 존중하는 태도를 가져야 한다. 또한, AI와 인간의 협업에서 발생할 수 있는 윤리적 문제를 비판적으로 사고하고, 단순히 기술의 편리함만을 추구하기보다 정보의 신뢰성과 도덕성을 함께 고려하는 균형 잡힌 사고를 통해 책임감 있고 성숙한 디지털 시민으로 성장해야 한다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-12 pt-6 border-t border-gray-300 text-center">
+            <p class="text-accent-grey text-sm">
+                이 인포그래픽은 "미림 마이스터고 1학년 1반의 AI 활용 실태 및 윤리 의식 조사" 보고서를 기반으로 생성되었다.
+            </p>
+            <p class="text-accent-grey text-xs mt-1">
+                &copy; 2025 1학년 (1)반 (1)조. 모든 권리 보유.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js Colors
+        const primaryBlue = '#2A62B6';
+        const secondaryTeal = '#4ECDC4';
+        const accentGrey = '#A9A9A9';
+        const supportingLightBlue = '#E0F2FE';
+        const darkText = '#263238';
+
+        // Helper function for tooltip
+        function customTooltip(context) {
+            let tooltipEl = document.getElementById('chartjs-tooltip');
+            if (!tooltipEl) {
+                tooltipEl = document.createElement('div');
+                tooltipEl.id = 'chartjs-tooltip';
+                tooltipEl.className = 'chartjs-tooltip';
+                document.body.appendChild(tooltipEl);
+            }
+
+            const tooltipModel = context.tooltip;
+            if (tooltipModel.opacity === 0) {
+                tooltipEl.style.opacity = 0;
+                return;
+            }
+
+            tooltipEl.classList.remove('above', 'below', 'no-transform');
+            if (tooltipModel.yAlign) {
+                tooltipEl.classList.add(tooltipModel.yAlign);
+            } else {
+                tooltipEl.classList.add('no-transform');
+            }
+
+            function getBody(bodyItem) {
+                return bodyItem.lines;
+            }
+
+            if (tooltipModel.body) {
+                const titleLines = tooltipModel.title || [];
+                const bodyLines = tooltipModel.body.map(getBody);
+
+                let innerHtml = '';
+
+                titleLines.forEach(function(title) {
+                    innerHtml += '<div class="font-semibold">' + title + '</div>';
+                });
+
+                bodyLines.forEach(function(body, i) {
+                    const colors = tooltipModel.labelColors[i];
+                    let style = 'background:' + colors.backgroundColor;
+                    style += '; border-color:' + colors.borderColor;
+                    style += '; border-width: 2px';
+                    const span = '<span class="chartjs-tooltip-key" style="' + style + '"></span>';
+                    innerHtml += '<div>' + span + body + '</div>';
+                });
+                
+                tooltipEl.innerHTML = innerHtml;
+            }
+
+            const position = context.chart.canvas.getBoundingClientRect();
+            
+            tooltipEl.style.opacity = 1;
+            tooltipEl.style.position = 'absolute';
+            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+            tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
+            tooltipEl.style.pointerEvents = 'none';
+        }
+        
+        // Function to wrap labels
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+
+        // 설문조사 1: AI 질문 빈도 (원형 차트)
+        const surveyCtx1 = document.getElementById('surveyChart1').getContext('2d');
+        new Chart(surveyCtx1, {
+            type: 'pie',
+            data: {
+                labels: ['아예 쓰지 않는다', '아주 가끔 쓴다', '보통이다', '종종 쓴다', '자주 쓴다'],
+                datasets: [{
+                    label: '응답 수',
+                    data: [1, 2, 2, 9, 5], // 응답 수
+                    backgroundColor: [
+                        '#FF6384', // Vivid Pink
+                        '#FF9F40', // Vivid Orange
+                        '#FFCD56', // Vivid Yellow
+                        '#4BC0C0', // Vivid Teal (Secondary Teal)
+                        '#36A2EB'  // Vivid Blue (Primary Blue)
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 11 },
+                            padding: 15,
+                             boxWidth: 15,
+                            // Custom label formatting for legend if needed
+                            generateLabels: function(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        const percentage = ((data.datasets[0].data[i] / data.datasets[0].data.reduce((a, b) => a + b, 0)) * 100).toFixed(1);
+                                        return {
+                                            text: `${label} (${percentage}%)`,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: false, // Disable default tooltip
+                        external: customTooltip,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.chart.getDatasetMeta(0).total;
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return `${label}: ${value}명 (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 설문조사 2: AI 신뢰도 (가로 막대 차트)
+        const surveyCtx2 = document.getElementById('surveyChart2').getContext('2d');
+        new Chart(surveyCtx2, {
+            type: 'bar', // 가로 막대 차트는 indexAxis: 'y' 와 함께 bar 타입 사용
+            data: {
+                labels: ['매우 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'].map(label => wrapLabels(label,10)),
+                datasets: [{
+                    label: '응답 수',
+                    data: [0, 0, 8, 10, 1], // 응답 수
+                    backgroundColor: [secondaryTeal, secondaryTeal, secondaryTeal, primaryBlue, primaryBlue], // 그룹별 색상 구분 가능
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // 가로 막대 차트
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: '응답 수 (명)', font: {size: 10}, color: accentGrey },
+                        ticks: { font: { size: 10 } }
+                    },
+                    y: {
+                        ticks: { font: { size: 11 }, autoSkip: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: false, 
+                        external: customTooltip,
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw || 0;
+                                const originalLabel = context.chart.data.labels[context.dataIndex].join ? context.chart.data.labels[context.dataIndex].join(' ') : context.chart.data.labels[context.dataIndex];
+                                const percentage = ((value / context.chart.getDatasetMeta(0).total) * 100).toFixed(1);
+                                return `${originalLabel}: ${value}명 (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 설문조사 3: 출처 표기 경험 (가로 막대 차트)
+        const surveyCtx3 = document.getElementById('surveyChart3').getContext('2d');
+        new Chart(surveyCtx3, {
+            type: 'bar',
+            data: {
+                labels: ['매우 아니다', '아니다', '보통이다', '그렇다', '매우 그렇다'].map(label => wrapLabels(label,10)),
+                datasets: [{
+                    label: '응답 수',
+                    data: [7, 4, 1, 6, 1], // 응답 수
+                    backgroundColor: [primaryBlue, primaryBlue, accentGrey, secondaryTeal, secondaryTeal],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                     x: {
+                        beginAtZero: true,
+                        title: { display: true, text: '응답 수 (명)', font: {size: 10}, color: accentGrey },
+                        ticks: { font: { size: 10 } }
+                    },
+                    y: {
+                        ticks: { font: { size: 11 }, autoSkip: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: false,
+                        external: customTooltip,
+                        callbacks: {
+                           label: function(context) {
+                                const label = context.dataset.label || '';
+                                const value = context.raw || 0;
+                                const originalLabel = context.chart.data.labels[context.dataIndex].join ? context.chart.data.labels[context.dataIndex].join(' ') : context.chart.data.labels[context.dataIndex];
+                                const percentage = ((value / context.chart.getDatasetMeta(0).total) * 100).toFixed(1);
+                                return `${originalLabel}: ${value}명 (${percentage}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // 합계 계산을 위해 getDatasetMeta(0).total 대신 실제 합계 사용
+        Chart.defaults.plugins.tooltip.callbacks.label = function(context) {
+            const label = context.label || '';
+            const value = context.raw || 0;
+            let sum = 0;
+            const data = context.chart.data.datasets[0].data;
+            data.map(d => { sum += d; });
+            const percentage = ((value / sum) * 100).toFixed(1);
+            
+            let displayLabel = label;
+            if (context.chart.config.type === 'bar' && context.chart.options.indexAxis === 'y') {
+                 // For horizontal bar charts, get the y-axis label
+                 displayLabel = context.chart.data.labels[context.dataIndex];
+                 if (Array.isArray(displayLabel)) displayLabel = displayLabel.join(' '); // If wrapped
+            }
+
+            return `${displayLabel}: ${value}명 (${percentage}%)`;
+        };
+
+
+    </script>
+    </body>
+</html>
